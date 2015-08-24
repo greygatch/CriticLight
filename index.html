@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AngularJS Plunker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <main>
+      <div class='container row'>
+        <h1>CriticLight</h1>
+        <p>A lightweight movie/TV database app!</p>
+        <div class="input-field col s10 offset-s1 m8 offset-m2 l6 offset-l3 grid-example">
+          <label for="movie_title">Title</label>
+          <input id="movie_title" class='validate' type="text" ng-model="movie" ng-keypress="findMovie($event)">
+          <button ng-click="findMovie()" class="btn btn-success btn-sm"><i class="material-icons search">search</i></button>
+        </div>
+        <div ng-if="error" style="color: white" class="col s4 offset-s4 grid-example">{{errorMsg}}</div>
+        <div ng-if="!error && resultsDisplayed" id="content" class="grid-example col s12 m10 offset-m1 l8 offset-l2">
+          <h2 ng-if="title" class='year'><b>{{title}}</b> [{{released}}]</h2>
+          <hr ng-if="title" />
+          <h5 ng-if="rating">IMDB: <b class="rating">{{rating}}</b></h5>
+          <h5 ng-if="rating">RT: <b class="rating">{{rating2}}</b></h5>
+          <h5 ng-if="rating">Avg: <b class="rating">{{avgRating}}</b></h5>
+          <hr ng-if="title" />
+          <h6 ng-if="director"><b>Director: </b>{{director}}</h6>
+          <h6 ng-if="actors"><b>Starring: </b>{{actors}}</h6>
+          <hr ng-if="actors" />
+          <h6>{{plot}}</h6>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer page-footer teal lighten-1">
+        <div class="container">
+        © 2014 Evan Gatchell
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.3/angular.js" data-semver="1.4.3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+
+</html>

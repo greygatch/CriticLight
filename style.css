@@ -1,0 +1,70 @@
+body{
+  text-align: center;
+  background-image: url('http://i1.wp.com/theultralinx.com/wp-content/uploads/2014/11/Wallpaper-of-the-Week-172.jpg');
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: GhostWhite;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+hr {
+  height: 1px;
+  color: black;
+  background-color: purple;
+  border: none;
+}
+
+.input-field{
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+.input-field > input{
+  margin-bottom: 10px;
+}
+
+#content{
+  background-color: Ghostwhite;
+  padding: 2em 3em;
+  border-radius: 10px;
+  border: 3px solid teal;
+  box-shadow: 0 0 20px violet;
+  color: black;
+}
+
+.rating{
+  color: Tomato;
+}
+
+footer{
+  border-top: 1px solid violet;
+}
+
+p{
+  color: white;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+@media (max-width: 400px) {
+  body{
+    letter-spacing: 2px
+  }
+  #content{
+    padding: 0 2em;
+  }
+  #content h2{
+    font-size: 2em;
+  }
+  #content h5, #content h6{
+    font-size: 1em;
+  }
+  h1{
+    font-size: 3em;
+  }
+
+}
